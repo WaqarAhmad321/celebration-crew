@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
 import FAQ from "@/components/FAQ";
 import PricingCard from "@/components/PricingCard";
-import {  BackgroundGradientAnimation as AuroraBackground } from "@/components/aurora-background";
 import Image from "next/image";
 
 function App() {
