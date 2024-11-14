@@ -355,7 +355,12 @@ function App() {
   );
 }
 
-const ServiceCard = ({ icon: Icon, title, description }) => (
+const ServiceCard = ({ icon: Icon, title, description }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: any;
+  title: string;
+  description: string;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
