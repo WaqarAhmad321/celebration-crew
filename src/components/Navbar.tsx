@@ -20,17 +20,18 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="#" text="Home" />
-            <NavLink href="#" text="About" />
-            <NavLink href="#" text="Services" />
-            <NavLink href="#" text="Pricing" />
-            <NavLink href="#" text="Contact" />
-            <motion.button
+            <NavLink href="#home" text="Home" />
+            <NavLink href="#about" text="About" />
+            <NavLink href="#services" text="Services" />
+            <NavLink href="#pricing" text="Pricing" />
+            <NavLink href="#contact" text="Contact" />
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold">
               Get Started
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -51,11 +52,11 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
-              <MobileNavLink href="#" text="Home" />
-              <MobileNavLink href="#" text="About" />
-              <MobileNavLink href="#" text="Services" />
-              <MobileNavLink href="#" text="Pricing" />
-              <MobileNavLink href="#" text="Contact" />
+              <MobileNavLink href="#home" text="Home" />
+              <MobileNavLink href="#about" text="About" />
+              <MobileNavLink href="#services" text="Services" />
+              <MobileNavLink href="#pricing" text="Pricing" />
+              <MobileNavLink href="#contact" text="Contact" />
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold w-full">

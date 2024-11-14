@@ -77,69 +77,70 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 hero-pattern font-dmsans">
+    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-primary-50 to-secondary-50 hero-pattern font-dmsans">
       <Navbar />
 
       {/* Hero Section */}
       {/* <AuroraBackground> */}
-        <section className="pt-32 pb-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center">
-              <h1 className="text-5xl md:text-7xl font-bold font-display gradient-text mb-6">
-                Make Every Moment Magical
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                We turn your special occasions into unforgettable celebrations
-                with our premium party planning services.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary">
-                Start Planning
-              </motion.button>
-            </motion.div>
+      <section id="home" className="pt-32 pb-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold font-display gradient-text mb-6">
+              Make Every Moment Magical
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              We turn your special occasions into unforgettable celebrations
+              with our premium party planning services.
+            </p>
+            <motion.a
+              href="#pricing"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-primary">
+              Start Planning
+            </motion.a>
+          </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Image
-                src="https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?auto=format&fit=crop&q=80"
-                alt="Celebration 1"
-                width={500}
-                height={500}
-                className="rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              />
-              <Image
-                src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80"
-                alt="Celebration 2"
-                width={1200}
-                height={1200}
-                className="rounded-lg shadow-lg hover:shadow-xl transition-shadow md:mt-12"
-              />
-              <Image
-                src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80"
-                alt="Celebration 3"
-                width={1200}
-                height={1200}
-                className="rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              />
-            </motion.div>
-          </div>
-        </section>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Image
+              src="https://images.unsplash.com/photo-1533294455009-a77b7557d2d1?auto=format&fit=crop&q=80"
+              alt="Celebration 1"
+              width={500}
+              height={500}
+              className="rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+            />
+            <Image
+              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80"
+              alt="Celebration 2"
+              width={1200}
+              height={1200}
+              className="rounded-lg shadow-lg hover:shadow-xl transition-shadow md:mt-12"
+            />
+            <Image
+              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80"
+              alt="Celebration 3"
+              width={1200}
+              height={1200}
+              className="rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+            />
+          </motion.div>
+        </div>
+      </section>
       {/* </AuroraBackground> */}
 
       {/* About Section */}
       <AboutSection />
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-white">
+      <section id="services" className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -175,7 +176,9 @@ function App() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
+      <section
+        id="pricing"
+        className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -197,7 +200,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 bg-white">
+      <section id="contact" className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -355,7 +358,11 @@ function App() {
   );
 }
 
-const ServiceCard = ({ icon: Icon, title, description }: {
+const ServiceCard = ({
+  icon: Icon,
+  title,
+  description,
+}: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   title: string;

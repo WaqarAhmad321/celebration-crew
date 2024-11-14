@@ -12,7 +12,7 @@ const stats = [
 
 const AboutSection = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
+    <section id="about" className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

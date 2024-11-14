@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.section-title {
-  @apply text-4xl font-display font-bold;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-.btn-primary {
-  @apply bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold;
+@layer components {
+  .section-title {
+    @apply text-4xl font-display font-bold;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold;
+  }
 }

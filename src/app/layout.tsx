@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playFairDisplay.variable} ${dmSans.variable} antialiased`}>
+        className={`${playFairDisplay.variable} ${dmSans.variable} antialiased scroll-smooth`}>
         {children}
       </body>
     </html>
