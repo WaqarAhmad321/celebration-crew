@@ -70,7 +70,7 @@ const AboutSection = () => {
               className="rounded-lg shadow-xl"
             />
             <Image
-              src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&q=80"
+              src="https://plus.unsplash.com/premium_photo-1661344231470-10b4ec4cf094?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               width={1200}
               height={1200}
               alt="Celebration Moment"
