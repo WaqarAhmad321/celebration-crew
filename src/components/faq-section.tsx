@@ -4,14 +4,14 @@ import FAQ from "@/components/FAQ";
 
 const faqs = [
   {
-    question: "How far in advance should I book my event?",
+    question: "What services do you offer for birthday event planning?",
     answer:
-      "We recommend booking at least 3-6 months in advance for regular events, and 6-12 months for large or luxury events to ensure availability and proper planning time.",
+      "We provide complete event management services, including theme selection, venue decoration, entertainment, photography, party favors, and more. We can also handle custom requests to make your event truly special.",
   },
   {
-    question: "What is included in the decoration package?",
+    question: "Can you plan both kids’ and adults’ birthday parties?",
     answer:
-      "Our decoration packages include theme-based setups, balloon arrangements, floral decorations, lighting, backdrop designs, and table settings. Specific items vary by package level.",
+      "Absolutely! We specialize in creating unique and personalized experiences for all age groups, from children’s fun-filled celebrations to elegant adult gatherings.",
   },
   {
     question: "Can you accommodate dietary restrictions?",
@@ -19,9 +19,9 @@ const faqs = [
       "Yes, we work with catering partners who can accommodate various dietary requirements including vegetarian, vegan, gluten-free, and other specific allergies or restrictions.",
   },
   {
-    question: "Do you provide day-of coordination?",
+    question: "4. How far in advance should I book your services?",
     answer:
-      "Yes, all our packages include day-of coordination to ensure your event runs smoothly. Our coordinators will manage vendors, timeline, and handle any issues that arise.",
+      "To ensure we provide the best experience, we recommend booking at least 2-4 days in advance. However, we can accommodate last-day requests based on availability.",
   },
 ];
 
