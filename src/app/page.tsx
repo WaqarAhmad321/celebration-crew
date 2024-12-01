@@ -1,48 +1,24 @@
-"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
 import { Cake, PartyPopper, Gift, Phone, Mail, MapPin } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
-import FAQ from "@/components/FAQ";
 import PricingCard from "@/components/PricingCard";
 import Image from "next/image";
 import ContactSection from "@/components/Contact-Section";
 import Link from "next/link";
 import { MotionDiv } from "@/components/motion-div";
+import FaqSection from "@/components/faq-section";
 
 function App() {
-  const faqs = [
-    {
-      question: "How far in advance should I book my event?",
-      answer:
-        "We recommend booking at least 3-6 months in advance for regular events, and 6-12 months for large or luxury events to ensure availability and proper planning time.",
-    },
-    {
-      question: "What is included in the decoration package?",
-      answer:
-        "Our decoration packages include theme-based setups, balloon arrangements, floral decorations, lighting, backdrop designs, and table settings. Specific items vary by package level.",
-    },
-    {
-      question: "Can you accommodate dietary restrictions?",
-      answer:
-        "Yes, we work with catering partners who can accommodate various dietary requirements including vegetarian, vegan, gluten-free, and other specific allergies or restrictions.",
-    },
-    {
-      question: "Do you provide day-of coordination?",
-      answer:
-        "Yes, all our packages include day-of coordination to ensure your event runs smoothly. Our coordinators will manage vendors, timeline, and handle any issues that arise.",
-    },
-  ];
-
   return (
     <>
       {/* Hero Section */}
       {/* <AuroraBackground> */}
       <section id="home" className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -59,9 +35,9 @@ function App() {
                 Start Planning
               </Link>
             </MotionDiv>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -87,7 +63,7 @@ function App() {
               height={1200}
               className="rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             />
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
       {/* </AuroraBackground> */}
@@ -98,7 +74,7 @@ function App() {
       {/* Services Section */}
       <section id="services" className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -109,7 +85,7 @@ function App() {
               From intimate gatherings to grand celebrations, we create
               experiences that last a lifetime.
             </p>
-          </motion.div>
+          </MotionDiv>
 
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
@@ -135,28 +111,7 @@ function App() {
       <ContactSection />
 
       {/* FAQ Section */}
-      <section
-        id="faqs"
-        className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16">
-            <h2 className="section-title">Frequently Asked Questions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Find answers to common questions about our services
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <FAQ key={index} {...faq} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection />
     </>
   );
 }
@@ -171,7 +126,7 @@ const ServiceCard = ({
   title: string;
   description: string;
 }) => (
-  <motion.div
+  <MotionDiv
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -181,7 +136,7 @@ const ServiceCard = ({
     </div>
     <h3 className="text-2xl font-display font-bold mb-4">{title}</h3>
     <p className="text-gray-600">{description}</p>
-  </motion.div>
+  </MotionDiv>
 );
 
 export default App;

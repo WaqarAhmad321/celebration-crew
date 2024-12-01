@@ -2,12 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { MotionDiv } from "./motion-div";
 
 const ContactSection = () => {
   return (
     <section id="contact" className="py-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -16,10 +17,10 @@ const ContactSection = () => {
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Let&apos;s start planning your perfect celebration
           </p>
-        </motion.div>
+        </MotionDiv>
 
         <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -53,7 +54,7 @@ const ContactSection = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
 
           <ContactForm />
         </div>

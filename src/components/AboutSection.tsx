@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 // import { Heart, Users, Trophy, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { MotionDiv } from "./motion-div";
 
 // const stats = [
 //   { icon: Heart, label: "Happy Clients", value: "500+" },
@@ -16,7 +19,7 @@ const AboutSection = () => {
       id="about"
       className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
       <div className="max-w-6xl mx-auto">
-        <motion.div
+        <MotionDiv
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -26,10 +29,10 @@ const AboutSection = () => {
             We&apos;ve been crafting unforgettable moments and turning dreams
             into reality.
           </p>
-        </motion.div>
+        </MotionDiv>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -55,15 +58,15 @@ const AboutSection = () => {
               className="btn-primary">
               Learn More
             </motion.button> */}
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative">
             <Image
-              src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&q=80"
+              src="https://plus.unsplash.com/premium_photo-1666184130709-f3709060899a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGFydHl8ZW58MHx8MHx8fDA%3D"
               width={1200}
               height={1200}
               alt="Team Planning"
@@ -76,12 +79,12 @@ const AboutSection = () => {
               alt="Celebration Moment"
               className="absolute -bottom-12 -right-12 w-2/3 rounded-lg shadow-xl border-4 border-white"
             />
-          </motion.div>
+          </MotionDiv>
         </div>
 
         {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <motion.div
+            <MotionDiv
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +98,7 @@ const AboutSection = () => {
                 {stat.value}
               </h4>
               <p className="text-gray-600">{stat.label}</p>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div> */}
       </div>

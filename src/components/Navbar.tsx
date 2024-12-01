@@ -13,12 +13,12 @@ const Navbar = () => {
     <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-orange-500 text-transparent bg-clip-text">
             Celebrations Crew
-          </motion.div>
+          </MotionDiv>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
@@ -48,7 +48,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -67,7 +67,7 @@ const Navbar = () => {
                 </motion.button>
               </Link>
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </div>
     </nav>

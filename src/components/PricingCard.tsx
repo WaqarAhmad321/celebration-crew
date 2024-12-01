@@ -27,7 +27,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       : "bg-orange-500 hover:bg-orange-600";
 
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -57,7 +57,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         className={`w-full ${buttonClass} text-white py-3 rounded-lg font-semibold transition-colors`}>
         Choose Plan
       </motion.button>
-    </motion.div>
+    </MotionDiv>
   );
 };
 
