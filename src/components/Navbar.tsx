@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { MotionDiv } from "./motion-div";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,18 +22,18 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <NavLink href="#home" text="Home" />
-            <NavLink href="#about" text="About" />
-            <NavLink href="#services" text="Services" />
-            <NavLink href="#pricing" text="Pricing" />
-            <NavLink href="#contact" text="Contact" />
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold">
-              Get Started
-            </motion.a>
+            <NavLink href="/#home" text="Home" />
+            <NavLink href="/#about" text="About" />
+            <NavLink href="/#services" text="Services" />
+            <NavLink href="/#faqs" text="FAQ" />
+            <NavLink href="/#contact" text="Contact" />
+            <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/order"
+                className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold">
+                Order Now!
+              </Link>
+            </MotionDiv>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,11 +59,13 @@ const Navbar = () => {
               <MobileNavLink href="#services" text="Services" />
               <MobileNavLink href="#pricing" text="Pricing" />
               <MobileNavLink href="#contact" text="Contact" />
-              <motion.button
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold w-full">
-                Get Started
-              </motion.button>
+              <Link href="/order">
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-purple-600 to-orange-500 text-white px-6 py-2 rounded-full font-semibold w-full">
+                  Order Now!
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         )}
@@ -71,22 +75,21 @@ const Navbar = () => {
 };
 
 const NavLink = ({ href, text }: { href: string; text: string }) => (
-  <motion.a
-    href={href}
-    className="text-gray-600 hover:text-gray-900 font-medium"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}>
-    {text}
-  </motion.a>
+  <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+    <Link href={href} className="text-gray-600 hover:text-gray-900 font-medium">
+      {text}
+    </Link>
+  </MotionDiv>
 );
 
 const MobileNavLink = ({ href, text }: { href: string; text: string }) => (
-  <motion.a
-    href={href}
-    className="text-gray-600 hover:text-gray-900 font-medium block px-4 py-2 hover:bg-gray-100 rounded-lg"
-    whileTap={{ scale: 0.95 }}>
-    {text}
-  </motion.a>
+  <MotionDiv whileTap={{ scale: 0.95 }}>
+    <Link
+      href={href}
+      className="text-gray-600 hover:text-gray-900 font-medium block px-4 py-2 hover:bg-gray-100 rounded-lg">
+      {text}
+    </Link>
+  </MotionDiv>
 );
 
 export default Navbar;

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/footer";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Celebration Crew",
@@ -30,7 +32,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${playFairDisplay.variable} ${dmSans.variable} antialiased scroll-smooth`}>
-        {children}
+        <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-primary-50 to-secondary-50 hero-pattern font-dmsans">
+          <Navbar />
+
+          {children}
+
+          <Footer />
+        </div>
       </body>
     </html>
   );

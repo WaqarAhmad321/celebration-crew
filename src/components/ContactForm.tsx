@@ -10,46 +10,47 @@ const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 const userId = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
 
-const servicesList = [
-  { name: "Snacks", price: 1500 },
-  { name: "Decoration", price: 3300 },
-  { name: "Location", price: 1200 },
-  { name: "Videos", price: 1050 },
-];
+// const servicesList = [
+//   { name: "Snacks", price: 1500 },
+//   { name: "Decoration", price: 3300 },
+//   { name: "Location", price: 1200 },
+//   { name: "Videos", price: 1050 },
+// ];
 
 const ContactForm = () => {
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors, isSubmitting } = formState;
 
   // State for dynamically tracking selected services
-  const [selectedServices, setSelectedServices] = useState<
-    { name: string; price: number }[]
-  >([]);
-  const totalBudget = selectedServices.reduce(
-    (total, service) => total + service.price,
-    0
-  );
+  // const [selectedServices, setSelectedServices] = useState<
+  //   { name: string; price: number }[]
+  // >([]);
+  // const totalBudget = selectedServices.reduce(
+  //   (total, service) => total + service.price,
+  //   0
+  // );
 
   // Handle toggling services
-  const handleServiceToggle = (service: { name: string; price: number }) => {
-    setSelectedServices(
-      (prev) =>
-        prev.some((s) => s.name === service.name)
-          ? prev.filter((s) => s.name !== service.name) // Remove service
-          : [...prev, service] // Add service
-    );
-  };
+  // const handleServiceToggle = (service: { name: string; price: number }) => {
+  //   setSelectedServices(
+  //     (prev) =>
+  //       prev.some((s) => s.name === service.name)
+  //         ? prev.filter((s) => s.name !== service.name) // Remove service
+  //         : [...prev, service] // Add service
+  //   );
+  // };
 
   const onSubmitQuote = async (data: any) => {
     if (!serviceId || !templateId || !userId) {
       throw new Error("Environment variables are not set");
     }
 
-    const selectedServiceNames = selectedServices.map((s) => s.name).join(", ");
+    // const selectedServiceNames = selectedServices.map((s) => s.name).join(", ");
     const emailTemplateParams = {
       from_name: data.name,
       from_email: data.email,
-      message: `${data.message}\n\nSelected Services: ${selectedServiceNames}\nTotal Budget: Rs.${totalBudget}`,
+      message: `Phone Number: ${data.phone}\n\n Messsage: ${data.message}`,
+      // message: `${data.message}\n\nSelected Services: ${selectedServiceNames}\nTotal Budget: Rs.${totalBudget}`,
     };
 
     try {
@@ -57,7 +58,7 @@ const ContactForm = () => {
 
       toast.success("Your message has been sent, Thank you!");
       // reset();
-      setSelectedServices([]); // Clear selected services
+      // setSelectedServices([]); // Clear selected services
     } catch (error) {
       toast.error("Something went wrong! Please try again.");
       console.log(error);
@@ -72,15 +73,27 @@ const ContactForm = () => {
       className="space-y-6"
       onSubmit={handleSubmit(onSubmitQuote)}>
       {/* Full Name Field */}
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
-          Full Name
-        </label>
-        <input
-          type="text"
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-          {...register("name", { required: "Name is required" })}
-        />
+      <div className="flex gap-4 ie">
+        <div className="flex-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Full Name
+          </label>
+          <input
+            type="text"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            {...register("name", { required: "Name is required" })}
+          />
+        </div>
+        <div className="flex-1">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Email
+          </label>
+          <input
+            type="email"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            {...register("email", { required: "Email is required" })}
+          />
+        </div>
         {/* {errors.name && (
           <p className="text-red-500 text-sm">{errors.name.message}</p>
         )} */}
@@ -89,12 +102,15 @@ const ContactForm = () => {
       {/* Email Field */}
       <div>
         <label className="block text-sm font-medium text-gray-700 mb-2">
-          Email
+          Phone Number
         </label>
         <input
           type="email"
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-          {...register("email", { required: "Email is required" })}
+          {...register("phone", {
+            required: "Phone number is required",
+          })}
+          placeholder="So that we can get back to you"
         />
         {/* {errors.email && (
           <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -111,14 +127,15 @@ const ContactForm = () => {
           className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
           {...register("message", {
             required: "Message is required",
-          })}></textarea>
+          })}
+          placeholder="Your message"></textarea>
         {/* {errors.message && (
           <p className="text-red-500 text-sm">{errors.message.message}</p>
         )} */}
       </div>
 
       {/* Services Selection */}
-      <div className="p-4 rounded-lg border border-gray-300 bg-white shadow-sm">
+      {/* <div className="p-4 rounded-lg border border-gray-300 bg-white shadow-sm">
         <label className="block font-semibold text-lg text-gray-800 mb-4">
           Select Services
         </label>
@@ -150,7 +167,7 @@ const ContactForm = () => {
         <p className="mt-4 text-gray-800 font-medium text-xl">
           <strong>Total Budget:</strong> Rs.{totalBudget}
         </p>
-      </div>
+      </div> */}
 
       {/* Submit Button */}
       <MotionButton

@@ -1,18 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, Users, Trophy, Sparkles } from "lucide-react";
+// import { Heart, Users, Trophy, Sparkles } from "lucide-react";
 import Image from "next/image";
 
-const stats = [
-  { icon: Heart, label: "Happy Clients", value: "500+" },
-  { icon: Trophy, label: "Events Completed", value: "1000+" },
-  { icon: Users, label: "Team Members", value: "50+" },
-  { icon: Sparkles, label: "Awards Won", value: "25+" },
-];
+// const stats = [
+//   { icon: Heart, label: "Happy Clients", value: "500+" },
+//   { icon: Trophy, label: "Events Completed", value: "1000+" },
+//   { icon: Users, label: "Team Members", value: "50+" },
+//   { icon: Sparkles, label: "Awards Won", value: "25+" },
+// ];
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
+    <section
+      id="about"
+      className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
@@ -21,8 +23,8 @@ const AboutSection = () => {
           className="text-center mb-16">
           <h2 className="section-title">Our Journey</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Since 2010, we&apos;ve been crafting unforgettable moments and
-            turning dreams into reality.
+            We&apos;ve been crafting unforgettable moments and turning dreams
+            into reality.
           </p>
         </motion.div>
 
@@ -47,12 +49,12 @@ const AboutSection = () => {
               into reality. Our dedicated team of creative professionals works
               tirelessly to ensure every detail is perfect.
             </p>
-            <motion.button
+            {/* <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn-primary">
               Learn More
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           <motion.div
@@ -77,7 +79,7 @@ const AboutSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -95,7 +97,7 @@ const AboutSection = () => {
               <p className="text-gray-600">{stat.label}</p>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

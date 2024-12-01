@@ -9,51 +9,10 @@ import FAQ from "@/components/FAQ";
 import PricingCard from "@/components/PricingCard";
 import Image from "next/image";
 import ContactSection from "@/components/Contact-Section";
+import Link from "next/link";
+import { MotionDiv } from "@/components/motion-div";
 
 function App() {
-  const pricingPlans = [
-    {
-      title: "Basic Celebration",
-      price: "999",
-      features: [
-        "Up to 50 guests",
-        "Basic decorations",
-        "Event coordination",
-        "Basic catering options",
-        "4-hour venue rental",
-      ],
-      color: "purple" as const,
-    },
-    {
-      title: "Premium Party",
-      price: "1999",
-      features: [
-        "Up to 100 guests",
-        "Premium decorations",
-        "Full event planning",
-        "Custom catering menu",
-        "6-hour venue rental",
-        "Photography service",
-      ],
-      color: "orange" as const,
-      featured: true,
-    },
-    {
-      title: "Luxury Event",
-      price: "3999",
-      features: [
-        "Up to 200 guests",
-        "Luxury decorations",
-        "Full event planning",
-        "Premium catering",
-        "8-hour venue rental",
-        "Photo & video service",
-        "Live entertainment",
-      ],
-      color: "purple" as const,
-    },
-  ];
-
   const faqs = [
     {
       question: "How far in advance should I book my event?",
@@ -78,9 +37,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-gradient-to-br from-primary-50 to-secondary-50 hero-pattern font-dmsans">
-      <Navbar />
-
+    <>
       {/* Hero Section */}
       {/* <AuroraBackground> */}
       <section id="home" className="pt-32 pb-20 px-4">
@@ -97,13 +54,11 @@ function App() {
               We turn your special occasions into unforgettable celebrations
               with our premium party planning services.
             </p>
-            <motion.a
-              href="#pricing"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary">
-              Start Planning
-            </motion.a>
+            <MotionDiv whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/order" className="btn-primary">
+                Start Planning
+              </Link>
+            </MotionDiv>
           </motion.div>
 
           <motion.div
@@ -158,44 +113,20 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard
-              icon={PartyPopper}
+              icon={Cake}
               title="Birthday Parties"
               description="Create unforgettable birthday celebrations with our custom themes and entertainment options."
             />
             <ServiceCard
               icon={Gift}
-              title="Special Events"
-              description="Whether it's an anniversary or graduation, we'll make your special day perfect."
+              title="Theme design"
+              description="Let us bring your event's theme to life with creativity, elegance, and precision."
             />
             <ServiceCard
-              icon={Cake}
-              title="Corporate Events"
-              description="Elevate your corporate gatherings with our professional planning services."
+              icon={PartyPopper}
+              title="Guest management"
+              description="Enjoy your occasion without being worried about guests for a single time with our management."
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section
-        id="pricing"
-        className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16">
-            <h2 className="section-title">Simple Pricing</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-              Choose the perfect package for your celebration needs
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan, index) => (
-              <PricingCard key={index} {...plan} />
-            ))}
           </div>
         </div>
       </section>
@@ -204,7 +135,9 @@ function App() {
       <ContactSection />
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
+      <section
+        id="faqs"
+        className="py-20 px-4 bg-gradient-to-b from-white to-primary-50">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -224,36 +157,7 @@ function App() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-white py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl font-bold gradient-text mb-4">
-            Celebrations Crew
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Making your special moments unforgettable
-          </p>
-          <div className="flex justify-center space-x-6 mb-8">
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              Facebook
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              Instagram
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              Twitter
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              LinkedIn
-            </a>
-          </div>
-          <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Celebrations Crew. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
 

@@ -30,7 +30,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <p className="text-gray-600">03298210149</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -39,7 +39,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Email</h3>
-                <p className="text-gray-600">hello@celebrationscrew.com</p>
+                <p className="text-gray-600">celebrationcrews@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -49,12 +49,12 @@ const ContactSection = () => {
               <div>
                 <h3 className="font-semibold text-lg">Location</h3>
                 <p className="text-gray-600">
-                  123 Party Street, Event City, EC 12345
+                  COMSATS University Islamabad, Lahore Campus
                 </p>
               </div>
             </div>
           </motion.div>
-          
+
           <ContactForm />
         </div>
       </div>
