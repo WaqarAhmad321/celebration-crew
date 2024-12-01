@@ -52,7 +52,7 @@ const ContactForm = () => {
     const emailTemplateParams = {
       from_name: data.name,
       from_email: data.email,
-      message: `Name: ${data.name} \n Email: ${data.email} Phone Number: ${data.phone}\n Event Date: ${date}\n Number of Persons: ${nPersons}\n Drink: ${data.drink}\n Snacks: ${data.snacks}\n Options: ${selectedServiceNames}`, // Add selected services and total budget
+      message: `Name: ${data.name} \n Email: ${data.email} Phone Number: ${data.phone}\n Event Date: ${date}\n Number of Persons: ${nPersons}\n Cake: ${data.drink}\n Snacks: ${data.snacks}\n Options: ${selectedServiceNames}`, // Add selected services and total budget
       // message: `${data.message}\n\nSelected Services: ${selectedServiceNames}\nTotal Budget: Rs.${totalBudget}`,
     };
 
@@ -215,7 +215,7 @@ const ContactForm = () => {
 
           <div className="space-y-2">
             <label htmlFor="drink" className="text-base font-semibold">
-              Drink (optional)
+              Cake (optional)
             </label>
 
             <div className="space-y-2">
